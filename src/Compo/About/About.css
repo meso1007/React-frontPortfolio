@@ -1,0 +1,13 @@
+.borderBlinkAnimation1 {
+    animation: borderBlink 2s infinite ease-in-out;
+  }
+  
+@keyframes borderBlink {
+    0%, 100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  

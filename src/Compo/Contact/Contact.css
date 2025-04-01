@@ -1,0 +1,16 @@
+@keyframes blink {
+    0% {
+      text-decoration: underline;
+    }
+    50% {
+      text-decoration: none;
+    }
+    100% {
+      text-decoration: underline;
+    }
+  }
+  
+  .blink-underline {
+    animation: blink 2s infinite;
+  }
+  

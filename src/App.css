@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+.bodyCompos {
+  padding-top: 4rem;
+}
+
+.container {
+    position: relative;
+
+}
+
+.container .text {
+    position: relative;
+    font-size: 3rem;
+}
+
+.container .text.sec-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #03372c;
+    border-left: 2px solid #F03F00;
+    animation: typeAnimation 4s steps(12) infinite;
+}
+
+@keyframes typeAnimation {
+    40%, 60% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+section {
+    perspective: 1000px; /* 3D効果を適用 */
+  }
+  
+  /* アニメーションを適用するテキスト */
+  .textani {
+    display: inline-block;
+    opacity: 0;
+    transform: rotateX(80deg); /* 初期状態 */
+    transform-origin: bottom center;
+    animation: appearFromBottom 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+  
+  /* 軽やかに動く 3D アニメーション */
+  @keyframes appearFromBottom {
+    0% {
+      opacity: 0;
+      transform: rotateX(80deg);
+    }
+    40% {
+      opacity: 0.6;
+      transform: rotateX(30deg); /* 角度を浅く */
+    }
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg);
+    }
+  }
+  
+  
+  
+.tektur{
+    font-family: "Tektur", sans-serif;
+  }
+  
+.american {
+    font-family: "American Captain";
+}
+.design{
+    font-family: "Funkie Retro", serif;
+}
+.design2 {
+    font-family: "Funkie Retro Outline", serif;
+}
+  
+.Roboto {
+    font-family: "Roboto", serif;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: "Bodoni Moda", serif;
+    font-optical-sizing: auto;
+}
+
+
+.clip-path-circle {
+    clip-path: circle(50% at 50% 50%);
+}
+
+.away {
+    transform: translateY(-120vh) rotate(-48deg); /* カードを上に移動し、回転させる */
+    opacity: 0; /* 視覚的に消える */
+    pointer-events: none; /* ユーザーがカードに対して操作できないようにする */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* スムーズなアニメーション */
+  }
+  
+  

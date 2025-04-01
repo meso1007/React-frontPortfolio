@@ -1,0 +1,81 @@
+.dot-bg {
+    background-image: radial-gradient(#ccc 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: 30;
+}
+
+  
+.svg-text {
+    fill: transparent;
+    stroke: #009473;
+    stroke-width: 0.1;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    font-size: "200px";
+    font-family: "Funkie Retro";
+    animation: textAnimation 3s ease-in-out 1 forwards;
+}
+
+
+.svg-text2 {
+    fill: transparent;
+    stroke: #009473;
+    stroke-width: 0.1;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    font-size: "200px";
+    font-family: "Funkie Retro";
+    animation: textAnimation 4s ease-in-out 1 forwards;
+}
+
+.svg-text3 {
+    fill: transparent;
+    stroke: #009473;
+    stroke-width: 0.1;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    font-size: "200px";
+    font-family: "Funkie Retro";
+    animation: textAnimation 5s ease-in-out 1 forwards;
+}
+
+@keyframes textAnimation {
+    0% {
+        stroke-dasharray: 30;
+        stroke-dashoffset: 50;
+    }
+    80% {
+        fill: transparent;
+    }
+    100% {
+        stroke-dasharray: 100;   
+        fill: #009473;
+        stroke-dashoffset: 0;
+    }
+}
+
+.wave1-bg {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .wave1-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scaleY(-1);
+    z-index: -1;
+  }
+
+.bg-svg {
+    background-image: url('../../../public/assets/bg-white-orange.svg');
+    background-size: cover;
+    background-position: center;
+}
+  

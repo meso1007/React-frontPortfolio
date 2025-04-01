@@ -1,0 +1,50 @@
+
+  .half-circle {
+    border-radius: 90% 90% 0 0;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .eye:hover .pupil {
+    transform: scale(1.2); 
+    }
+    @keyframes eye-move {
+        0%, 100% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(20px, 20px);
+        }
+      }
+      
+      
+      .animate-eye-move {
+        animation: eye-move 4s infinite ease-in-out;
+        animation-delay: 3s;  /* every 3s */
+      }
+
+      
+  @media screen and (max-width: 768px) {
+    .title {
+      font-size: 2.5rem;
+    }
+  
+    .cta-button {
+      padding: 12px 25px;
+    }
+  
+    .eye {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .eye-ball {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .pupil {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  

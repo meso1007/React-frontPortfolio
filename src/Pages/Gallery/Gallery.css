@@ -1,0 +1,81 @@
+.gbody {
+    background-image: radial-gradient(circle at 50% 50%, rgba(250, 245, 245, 0.05) 0%, transparent 70%);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+  }
+
+  
+.svg-autotext {
+    fill: transparent;
+    stroke: #a94458;
+    stroke-width: 0.1;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    font-size: "200px";
+    font-family: "Funkie Retro";
+    animation: galleryAnimation 3s ease-in-out 1 forwards;
+}
+
+
+.svg-autotext2 {
+    fill: transparent;
+    stroke: #a94458;
+    stroke-width: 0.1;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    font-size: "200px";
+    font-family: "Funkie Retro";
+    animation: galleryAnimation 4s ease-in-out 1 forwards;
+}
+
+.svg-autotext3 {
+    fill: transparent;
+    stroke: #a94458;
+    stroke-width: 0.1;
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+    font-size: "200px";
+    font-family: "Funkie Retro";
+    animation: galleryAnimation 5s ease-in-out 1 forwards;
+}
+
+@keyframes galleryAnimation {
+    0% {
+        stroke-dasharray: 30;
+        stroke-dashoffset: 50;
+    }
+    80% {
+        fill: transparent;
+    }
+    100% {
+        stroke-dasharray: 100;   
+        fill: #a94458;
+        stroke-dashoffset: 0;
+    }
+}
+
+.wave1-bg {
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .wave1-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scaleY(-1);
+    z-index: -1;
+  }
+
+.bg-svg {
+    background-image: url('../../../public/assets/bg-svg.svg');
+    background-size: cover;
+    background-position: center;
+}
+  
