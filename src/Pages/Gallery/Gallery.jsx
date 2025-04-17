@@ -24,7 +24,7 @@ const Gallery = () => {
 
   const favoriteTracks = [
     {
-      spotify_uri: "spotify:track:23r4gJTjStmdKVZAbdEFft?si=933a35eb030a4e5a",
+      spotify_uri: "spotify:track:57CL8B4evdteoj7aIkzEZc?si=acbf667f98d74392",
     },
     {
       spotify_uri: "spotify:track:0VjIjW4GlUZAMYd2vXMi3b",
@@ -64,7 +64,7 @@ const Gallery = () => {
       spotify_uri: "spotify:track:7raKnLKyQSatDiVVpiZDds?si=096f244d8b414782",
     },
     {
-      spotify_uri: "spotify:track:39lSC8a6LbnIX2I87qOgai?si=7d90fd00776642e6",
+      spotify_uri: "spotify:track:6G8ybvaNEW2nn1wMzvKjRc?si=f7f4325d986f4940",
     },
     {
       spotify_uri: "spotify:track:3eh51r6rFWAlGQRlHx9QnQ?si=f3971ebac8f34407",
@@ -76,9 +76,37 @@ const Gallery = () => {
       spotify_uri: "spotify:track:4HfxDJ0uLHTLe0fZrx0MbQ?si=ac5dd890c84f433b",
     },
     {
-      spotify_uri: "spotify:track:21LtZQQMQYwVIxc9O9Ygq8?si=fb80e71c7bd14c0c",
+      spotify_uri: "spotify:track:15vePScuEPjJeOWsnNqGgo?si=0b564680e7c1429f",
+    },
+    {
+      spotify_uri: "spotify:track:5CTaFr3yPs4SEtCMt70Hfv?si=c23f5ddbf32343a8",
+    },
+    {
+      spotify_uri: "spotify:track:0BaipJ80fvka5OhKrjnpGO?si=9772b67749fc4e6f",
+    },
+    {
+      spotify_uri: "spotify:track:0hLYU06I6ppGIhqiJ4uZom?si=730cc9022f6d4394",
+    },
+    {
+      spotify_uri: "spotify:track:3DJly4Rlop37FD4XsIj9Vv?si=45c67b1611f0489e",
+    },
+    {
+      spotify_uri: "spotify:track:3xKsf9qdS1CyvXSMEid6g8?si=5683acdeda84499f",
+    },
+    {
+      spotify_uri: "spotify:track:2z9iuAxKv4TTeCrPAxxKg9?si=7cf4c6adffba4789",
+    },
+    {
+      spotify_uri: "spotify:track:7pk2Mx1LnlaEpxfzNhgRuz?si=f06486e2343d44a1",
+    },
+    {
+      spotify_uri: "spotify:track:7zsSnv9ff1GMvf0LxXHpnP?si=e1ff923d363d43a3",
+    },
+    {
+      spotify_uri: "spotify:track:1QoyuMHNBe7lg3YW4Qtll4?si=1d66a97d015c4b2b",
     },
   ];
+
   const navigate = useNavigate();
 
   const goBack = () => {
@@ -92,7 +120,7 @@ const Gallery = () => {
   return (
     <>
       <motion.div
-        className="gbody min-h-screen z-40 w-full bg-ori_black tektur"
+        className="gbody min-h-[50vh] pt-[10vh] sm:pt-0 md:min-h-screen z-40 w-full bg-ori_black tektur"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
@@ -108,7 +136,7 @@ const Gallery = () => {
           <IoIosArrowBack />
           BACK
         </button>
-        <div className="w-full h-screen bg-cover bg-center flex flex-col justify-center items-center">
+        <div className="w-full md:h-screen bg-cover bg-center flex flex-col justify-center items-center">
           <svg
             width="100%"
             height="100%"
@@ -163,15 +191,18 @@ const Gallery = () => {
       </motion.div>
       <div className="gbody flex flex-wrap justify-center items-center min-h-screen bg-ori_black p-4">
         <div className="w-full">
-          <div className="grid grid-cols-3 gap-6 px-20 z-80">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-6 md:px-10 lg:px-20 z-80">
             {data.length > 0 ? (
               data.map((track, index) => <MusicCard key={index} data={track} />)
             ) : (
-              <p className="text-gray-700 text-lg">No tracks found...</p>
+              <p className="text-gray-300 text-lg text-center col-span-full">
+                No tracks found...
+              </p>
             )}
           </div>
         </div>
       </div>
+
       <div className="relative w-full ">
         <img
           src="./assets/bg-black-orange.svg"

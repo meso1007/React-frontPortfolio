@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import About from "./Compo/About/About";
 import Header from "./Compo/Header/Header";
@@ -11,21 +11,10 @@ import Games from "./Pages/Games/Games";
 import ToGame from "./Compo/ToGame/ToGame";
 import NotFound from "./Pages/NotFound/NotFound";
 import ScrollToTopButton from "./Compo/ScrollToTopButton/ScrollToTopButton";
-import Loader from "./Compo/Loader/Loader";
 
 function App() {
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   setTimeout(() => setLoading(false), 2000); // 2秒後にローディング終了
-  // }, []);
-
-  // if (loading) {
-  //   return <Loader />;
-  // }
-
   return (
-    <>
+    <div className="w-[100vw] overflow-hidden">
       <Header />
       <div className="bodyCompos bg-ori_white">
         <Routes>
@@ -69,11 +58,11 @@ function App() {
             element={<Gallery />}
           />
           <Route path="/games" element={<Games />} />
-          <Route path="*" element={<NotFound />} /> {/* NotFound コンポーネントを追加 */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

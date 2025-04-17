@@ -9,7 +9,7 @@ export default function Works() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/projects/")
+      .get("http://99.79.63.2:8000/api/projects/")
       .then((response) => {
         setProjects(response.data);
       })
@@ -21,7 +21,7 @@ export default function Works() {
   return (
     <>
       <motion.div
-        className="min-h-screen dot-bg w-full bg-ori_white text-ori_eme pt-18"
+        className="md:min-h-screen min-h-[50vh] pt-[10vh] dot-bg w-full bg-ori_white text-ori_eme pt-18"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
@@ -29,7 +29,7 @@ export default function Works() {
           ease: "easeOut",
         }}
       >
-        <div className="w-full h-screen bg-cover bg-center flex flex-col justify-center items-center">
+        <div className="w-full md:h-screen bg-cover bg-center flex flex-col justify-center items-center">
           <svg
             width="100%"
             height="100%"
@@ -84,7 +84,7 @@ export default function Works() {
         </div>
       </motion.div>
       <div className="w-full dot-bg">
-        <div className="grid grid-cols-3 gap-6 px-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 sm:px-8 md:px-12 lg:px-20">
           {projects.length > 0 ? (
             projects.map((project, index) => (
               <ProjectCard
@@ -102,11 +102,12 @@ export default function Works() {
           )}
         </div>
       </div>
+
       <div className="relative w-full">
         <img
           src="./assets/bg-white-orange.svg"
           alt="step"
-          className=" top-0 w-full z-10"
+          className="w-full h-auto object-cover z-10"
         />
       </div>
     </>

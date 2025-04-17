@@ -24,9 +24,9 @@ const About = () => {
   }, []);
 
   return (
-    <section className="bg-ori_green w-screen" id="about">
+    <section className="bg-ori_green w-full" id="about">
       <motion.div
-        className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-9"
+        className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-9 p-6"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{
@@ -36,7 +36,7 @@ const About = () => {
         viewport={{ once: true, amount: 0.3 }}
       >
         <motion.div
-          className="md:w-1/3 flex justify-center mt-10 md:mt-0 relative"
+          className="md:w-1/3 flex justify-center md:mt-10 md:mt-0 relative"
           initial={{ opacity: 0, x: -300 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
@@ -58,7 +58,7 @@ const About = () => {
         </motion.div>
 
         <motion.div
-          className="md:w-2/3 text-ori_white tektur"
+          className="md:w-2/3 text-ori_white tektur mt-6 md:mt-0"
           initial={{ opacity: 0, x: 300 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{
@@ -66,9 +66,11 @@ const About = () => {
             ease: "easeOut",
           }}
         >
-          <h2 className="text-7xl font-bold mb-6 leading-tight">Hi there!!</h2>
-          <div className="container">
-            <span className="text tektur">I'm a </span>
+          <h2 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Hi there!!
+          </h2>
+          <div className="container mb-6">
+            <span className="text-tektur">I'm a </span>
             <span className="text sec-text text-ori_orange font-bold tektur">
               {text}
             </span>
@@ -82,12 +84,12 @@ const About = () => {
             <span className="font-bold">Django.py</span>, always exploring new
             tools and techniques to improve my skills and tackle challenges.
           </p>
-          <p className="text-xl leading-relaxed">
+          <p className="text-xl hidden md:block leading-relaxed mb-6">
             I love building responsive websites that look great on all devices,
             ensuring smooth user experiences. My goal is to create clean,
             efficient solutions that not only work well but also delight users.
           </p>
-          <div className="flex justify-start gap-14 pt-14">
+          <div className="flex flex-col md:flex-row justify-start gap-8 md:gap-14 pt-6 md:pt-14">
             <Button
               href={"/works"}
               label={"TO MY PROJECTS"}

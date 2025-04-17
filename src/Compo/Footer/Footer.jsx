@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
 import SuccessAnimation from "../SuccessAnimation/SuccessAnimation";
-import { div } from "framer-motion/client";
 
 const Footer = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -11,14 +11,15 @@ const Footer = () => {
     e.preventDefault();
 
     setTimeout(() => {
-      setSubmitted(true); 
+      setSubmitted(true);
     }, 2000);
   };
 
   return (
-    <footer className="pt-64 pb-12 min-h-screen bg-ori_orange">
-      <div className="w-full text-gray-900 flex px-4">
-        <div className="w-2/5 flex flex-col px-12">
+    <footer className="md:pt-64 pt-20 pb-12 min-h-screen bg-ori_orange">
+      <div className="w-full text-gray-900 flex flex-col md:flex-row md:px-4">
+        {/* Left Section */}
+        <div className="w-full md:w-2/5 flex flex-col px-12 mb-8 md:mb-0">
           <div className="flex flex-col justify-evenly space-y-6 h-full">
             <h1 className="text-6xl font-bold">Menu</h1>
             <div className="text-3xl flex flex-col space-y-2">
@@ -31,7 +32,7 @@ const Footer = () => {
                 <li className="uppercase">
                   <a
                     href="mailto:diegoshoya2017@gmail.com"
-                    className="uppercase font-bold flex items-center gap-2 hover:underline cursor-pointer"
+                    className="uppercase font-bold hidden md:flex items-center gap-2 hover:underline cursor-pointer"
                   >
                     diegoshoya2017@gmail.com
                   </a>
@@ -64,6 +65,12 @@ const Footer = () => {
                 className="uppercase font-bold flex items-center hover:underline cursor-pointer hover:bg-gray-900 hover:text-white p-2 rounded-lg"
               >
                 <FaGithub />
+              </a>
+              <a
+                href="mailto:diegoshoya2017@gmail.com"
+                className="uppercase font-bold md:hidden flex items-center hover:underline cursor-pointer hover:bg-gray-900 hover:text-white p-2 rounded-lg"
+              >
+                <IoMdMail />
               </a>
             </div>
 
@@ -102,7 +109,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <nav className="w-3/5 flex text-8xl flex-col items-center font-bold">
+        {/* Right Section */}
+        <nav className="w-[100vw] px-4 md:px-0 md:w-3/5 flex flex-col items-center text-5xl md:text-8xl font-bold">
           <a
             href="/works"
             className="w-full border-gray-900 py-10 border-t-2 border-b-2 hover:bg-gray-900 hover:text-ori_white"

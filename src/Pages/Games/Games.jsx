@@ -21,7 +21,7 @@ const Games = () => {
   // Game Start
   const startGame = async () => {
     const response = await fetch(
-      "http://127.0.0.1:8000/api/blackjack/start-game/",
+      "http://99.79.63.2:8000/api/blackjack/start-game/",
       {
         method: "POST",
       }
@@ -66,7 +66,7 @@ const Games = () => {
   const hit = async () => {
     if (!gameId || gameEnded) return;
     const response = await fetch(
-      `http://127.0.0.1:8000/api/blackjack/hit/${gameId}/`,
+      `http://99.79.63.2:8000/api/blackjack/hit/${gameId}/`,
       {
         method: "POST",
       }
@@ -86,7 +86,7 @@ const Games = () => {
   };
   const revealDealerCards = async () => {
     const response = await fetch(
-      "http://127.0.0.1:8000/api/blackjack/start-game/",
+      "http://99.79.63.2:8000/api/blackjack/start-game/",
       {
         method: "POST",
       }
@@ -103,7 +103,7 @@ const Games = () => {
     setIsDealerDrawing(true);
 
     const response = await fetch(
-      `http://127.0.0.1:8000/api/blackjack/stand/${gameId}/`,
+      `http://99.79.63.2:8000/api/blackjack/stand/${gameId}/`,
       {
         method: "POST",
       }
@@ -125,7 +125,7 @@ const Games = () => {
 
     while (tempDealerScore < 17) {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/blackjack/hit/${gameId}/`,
+        `http://99.79.63.2:8000/api/blackjack/hit/${gameId}/`,
         {
           method: "POST",
         }
@@ -163,7 +163,6 @@ const Games = () => {
         <IoIosArrowBack />
         BACK
       </button>
-      {/* ゲーム開始ボタン */}
       {!gameEnded && (
         <>
           <h1 className="text-6xl text-white pb-10 z-40 ">BlackJack</h1>
@@ -177,14 +176,13 @@ const Games = () => {
       )}
 
       <div className="flex flex-col space-y-3 items-center">
-        {/* プレイヤーの手札 */}
         <div className="flex space-x-2 mt-4 z-40">
           {playerCards.map((card, index) => (
             <GameCard
               key={index}
               rank={card.rank}
               suit={card.suit}
-              isFaceUp={true} // プレイヤーのカードは常に表向き
+              isFaceUp={true}
             />
           ))}
         </div>
@@ -198,14 +196,13 @@ const Games = () => {
               key={index}
               rank={card.rank}
               suit={card.suit}
-              isFaceUp={dealerRevealed || card.rank !== "back"} // ディーラーのカードは公開されるまで裏面
+              isFaceUp={dealerRevealed || card.rank !== "back"}
             />
           ))}
         </div>
         <h2 className="text-ori_white z-40">{dealerScore}</h2>
       </div>
       <GitHubCloneButton />
-      {/* ヒット・スタンドボタン */}
       {!gameEnded && (
         <div className="flex space-x-4 mt-6 z-40">
           <button
@@ -223,7 +220,6 @@ const Games = () => {
         </div>
       )}
 
-      {/* ゲーム終了後のボタン */}
       {gameEnded && (
         <div className="flex space-x-4 mt-6 z-40">
           <button
@@ -235,17 +231,15 @@ const Games = () => {
         </div>
       )}
 
-      {/* 勝者表示 */}
       {winner && (
         <p className="text-xl text-white font-bold mt-4 z-40">
           Winner : {winner}
         </p>
       )}
 
-      {/* ディーラーがカードを引いている間にアニメーションを表示 */}
       {isDealerDrawing && (
         <p className="text-xl text-white font-bold mt-4">
-          ディーラーがカードを引いています...
+          The dealer is drawing a card...
         </p>
       )}
     </motion.div>

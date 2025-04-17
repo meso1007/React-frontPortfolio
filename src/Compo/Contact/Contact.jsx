@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import "./Contact.css"
+import "./Contact.css";
 import KUTE from "kute.js";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { MdArrowRightAlt, MdVisibility } from "react-icons/md";
@@ -26,12 +26,12 @@ const Contact = () => {
       className="w-full min-h-screen bg-ori_eme text-black pt-16 relative"
       id="contact"
     >
-      <div className="flex flex-row items-center justify-between">
-        <div className="px-24  pb-20 flex flex-col gap-3">
-        <h1 className="text-8xl font-semibold">Contact</h1>
-        <hr className="border-black border-t-1 w-full" />
+      <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="px-6 md:px-24 pb-20 flex flex-col gap-3">
+          <h1 className="text-6xl md:text-8xl font-semibold">Contact</h1>
+          <hr className="border-black border-t-1 w-full" />
         </div>
-        <div className="w-1/2 px-32">
+        <div className="hidden md:block w-1/2 px-32">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -54,7 +54,7 @@ const Contact = () => {
               style={{ visibility: "hidden" }}
             >
               <path
-              id="blob2"
+                id="blob2"
                 d="M38 -75.4C49.7 -59.1 59.9 -49.8 62.8 -38.4C65.8 -27 61.4 -13.5 56.2 -3C51 7.5 45 15 41.5 25.4C38 35.8 37 49.1 30.5 64.8C24 80.6 12 98.8 -5.4 108.2C-22.8 117.5 -45.7 118.1 -51.1 101.7C-56.5 85.3 -44.5 52.1 -58.1 32.3C-71.7 12.5 -110.8 6.3 -126.5 -9C-142.1 -24.3 -134.3 -48.7 -115.1 -58.8C-96 -68.9 -65.5 -64.7 -44.4 -75.6C-23.3 -86.4 -11.7 -112.2 0.7 -113.5C13.2 -114.8 26.3 -91.6 38 -75.4"
                 fill="#003e31"
               />
@@ -72,9 +72,10 @@ const Contact = () => {
           </svg>
         </div>
       </div>
-      <div className="flex flex-row items-center justify-center relative pr-32">
-        <div className="w-1/2 pl-24">
-          <div className="text-7xl flex flex-col items-start justify-start font-semibold ">
+
+      <div className="flex flex-col md:flex-row items-center justify-center relative pr-6 md:pr-32">
+        <div className="w-full md:w-1/2 pl-6 md:pl-24 hidden md:block">
+          <div className="text-4xl md:text-7xl flex flex-col items-start justify-start font-semibold ">
             <h1>We</h1>
             <h1>Would</h1>
             <h1>Love</h1>
@@ -88,14 +89,14 @@ const Contact = () => {
             </h1>
           </div>
         </div>
-        <div className="w-1/2 ">
-          <h2 className="text-5xl font-bold mb-8">Get in Touch</h2>
+
+        <div className="w-[70vw] md:w-1/2 md:mx-0 mx-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8">Get in Touch</h2>
           <hr className="border-black border-t-1 w-full" />
-          <div className="flex w-full flex-row justify-between items-baseline pt-4 pb-20">
-            <p className="text-lg text-gray-800 mb-6 w-1/3">
+          <div className="flex flex-col md:flex-row w-full justify-between items-baseline pt-4 pb-20">
+            <p className="text-lg text-gray-800 mb-6 w-full md:w-1/3">
               Feel free to reach out for collaborations or just a friendly chat.
             </p>
-
             <a
               href="mailto:diegoshoya2017@gmail.com"
               className="uppercase font-bold flex items-center gap-2 hover:underline cursor-pointer blink-underline"
@@ -106,13 +107,13 @@ const Contact = () => {
               </span>
             </a>
           </div>
-          <hr className="border-black border-t- w-full" />
-          <div className="flex w-full flex-row justify-between items-baseline pt-4">
-            <p className="text-lg text-gray-800 mb-6 w-1/3">
+          <hr className="border-black border-t- w-[70vw]" />
+          <div className="flex flex-col md:flex-row w-full justify-between items-baseline pt-4">
+            <p className="text-lg text-gray-800 mb-6 w-full md:w-1/3">
               Let's connect. Whether it's for work or just to chat, feel free to
               reach out through my social media.
             </p>
-            <div className="flex flex-col space-y-3 items-end">
+            <div className="flex md:flex-col space-y-3 w-1/2 items-end">
               <a
                 href="https://www.linkedin.com/in/shoya-horiuchi-83b785278/"
                 className="uppercase font-bold flex items-center gap-2 hover:underline cursor-pointer blink-underline"
@@ -144,29 +145,7 @@ const Contact = () => {
               </a>
             </div>
           </div>
-
-          {/* <form className="w-full max-w-lg space-y-4 relative z-10">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full p-3 rounded-lg text-black border border-gray-300"
-                />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full p-3 rounded-lg text-black border border-gray-300"
-                />
-                <textarea
-                  placeholder="Your Message"
-                  className="w-full p-3 rounded-lg text-black border border-gray-300 h-32"
-                ></textarea>
-                <button className="bg-white text-ori_eme px-6 py-3 rounded-lg font-bold hover:bg-gray-200">
-                  Send Message
-                </button>
-              </form>
-       */}
         </div>
-        {/* SVGをフォームの背景として配置 */}
       </div>
     </section>
   );
